@@ -229,7 +229,7 @@ img {
 }
 .navbar--scrolled {
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
   border-bottom-color: #162033;
 }
 .navbar__inner {
@@ -260,6 +260,23 @@ img {
   background: #4361ee;
   color: #ffffff;
   font-weight: 600;
+}
+
+.navbar__hire {
+  background: #4361ee;
+  color: #ffffff;
+  padding: 0.45rem 1.25rem;
+  border-radius: 25px; /* Cylindrical / Pill shape */
+  font-family: "Sora", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.navbar__hire:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
 }
 
 .navbar__toggle {
@@ -333,7 +350,7 @@ img {
   font-weight: 800;
   letter-spacing: 0.08em;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.08);
   pointer-events: none;
   user-select: none;
   white-space: nowrap;
@@ -846,22 +863,45 @@ img {
 }
 .contact__links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  max-width: 700px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 .contact__link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 0.85rem;
+  gap: 1.25rem;
+  font-size: 0.95rem;
   color: #8a8f98;
-  transition: color 0.25s, border-color 0.25s;
+  transition: color 0.25s, border-color 0.25s, transform 0.25s;
+  padding: 1.5rem;
+  text-align: left;
+}
+.contact__link svg {
+  flex-shrink: 0;
+}
+.contact__link-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* allows text truncation */
 }
 .contact__link:hover {
-  color: #4361ee;
-  border-color: #4361ee33;
+  color: #f1f1f1;
+  border-color: #4361ee55;
+  transform: translateY(-4px);
+}
+.contact__link-label {
+  font-size: 0.75rem;
+  color: #8a8f98;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.contact__link .mono {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ═══════════════════════════════════════════════════════════

@@ -13,9 +13,6 @@ const fadeUp = {
 export default function Hero() {
   return (
     <section id="hero" className="hero">
-      {/* Watermark */}
-      <div className="hero__watermark">{HERO.watermark}</div>
-
       {/* Photo — absolutely positioned, large, centered */}
       <div className="hero__photo-wrap">
         <img
@@ -127,13 +124,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="hero__scroll"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -143,8 +133,6 @@ export default function Hero() {
             <circle cx="10" cy="8" r="2" fill="#8a8f98" />
           </svg>
         </motion.div>
-        <span className="hero__scroll-text">Scroll down</span>
-      </motion.div>
     </section>
   );
 }

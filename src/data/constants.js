@@ -72,7 +72,7 @@ export const PROJECTS = [
     description:
       "Cloud-based medical record system with role-based access, JWT authentication, Google OAuth 2.0, AES-256 encryption, QR-based patient identification, and blockchain-based audit logging for secure, tamper-proof record management.",
     live: "https://emar-7ztj.vercel.app",
-    source: "https://github.com/Vaddeboina-Akhil/EMAR",
+    source: "https://github.com/Akhil-V04/EMAR.git",
   },
   {
     title: "Zevent",
@@ -132,13 +132,32 @@ export const LEADERSHIP = [
   },
 ];
 
-// Add certifications as { title, issuer, date, file }
-// file path should be relative to /assets/certifications/
-export const CERTIFICATIONS = [];
+export const CERTIFICATIONS = [
+  {
+    title: "Python Full Stack",
+    issuer: "ISO",
+    file: "/assets/certifications/Python Full Stack_ISO.pdf",
+  },
+  {
+    title: "Technology Job Simulation",
+    issuer: "Deloitte",
+    file: "/assets/certifications/Deloitte Technology Job Simulation.pdf",
+  },
+  {
+    title: "Advance Software Job Simulation",
+    issuer: "Walmart",
+    file: "/assets/certifications/walmart_advance software job simulation certificate.pdf",
+  },
+  {
+    title: "Android Developer Virtual Internship",
+    issuer: "AICTE",
+    file: "/assets/certifications/Android Developer Virtual Internship_AICTE.pdf",
+  },
+];
 
 export const CONTACT = {
   email: "akhilvaddeboina25@gmail.com",
   linkedin: "https://linkedin.com/in/vaddeboina-akhil",
-  github: "https://github.com/Vaddeboina-Akhil",
+  github: "https://github.com/Akhil-V04",
   location: "Hyderabad, Telangana",
 };

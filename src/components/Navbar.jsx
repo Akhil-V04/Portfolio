@@ -28,6 +28,9 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
+        <a href="#hero" className="navbar__logo mono" style={{ fontSize: "1.2rem", fontWeight: "700", color: "#f1f1f1", textDecoration: "none" }}>AK.</a>
+
+        <div style={{ flex: 1 }} />
         <button
           className="navbar__toggle"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -50,6 +53,10 @@ export default function Navbar() {
             </a>
           ))}
         </div>
+
+        <a href="#contact" className="navbar__hire" onClick={() => setMenuOpen(false)}>
+          Hire Me
+        </a>
       </div>
     </nav>
   );

@@ -44,10 +44,17 @@ export default function Leadership() {
             <h3 className="leadership__sub mono accent">Certifications</h3>
             {CERTIFICATIONS.length > 0 ? (
               CERTIFICATIONS.map((cert) => (
-                <div key={cert.title} className="card leadership__item">
+                <a 
+                  key={cert.title} 
+                  href={cert.file} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="card leadership__item"
+                  style={{ display: "block", textDecoration: "none" }}
+                >
                   <p className="leadership__role">{cert.title}</p>
                   <p className="leadership__org mono">{cert.issuer}</p>
-                </div>
+                </a>
               ))
             ) : (
               <p className="muted mono" style={{ fontSize: "0.85rem" }}>

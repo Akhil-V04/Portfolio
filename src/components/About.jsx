@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { ABOUT } from "../data/constants";
 
 const fadeUp = {
@@ -9,6 +10,30 @@ const fadeUp = {
 const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
+
+function AnimatedCounter({ value }) {
+  const numValue = parseInt(value, 10);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const [displayValue, setDisplayValue] = useState(0);
+
+  useEffect(() => {
+    if (isInView && !isNaN(numValue)) {
+      const controls = animate(0, numValue, {
+        duration: 2.5,
+        ease: "easeOut",
+        onUpdate(v) {
+          setDisplayValue(Math.floor(v));
+        }
+      });
+      return () => controls.stop();
+    } else if (isNaN(numValue)) {
+      setDisplayValue(value);
+    }
+  }, [isInView, numValue, value]);
+
+  return <span ref={ref}>{displayValue}</span>;
+}
 
 export default function About() {
   return (
@@ -36,7 +61,9 @@ export default function About() {
           <motion.div variants={fadeUp} className="about__stats">
             {ABOUT.stats.map((stat) => (
               <div key={stat.label} className="about__stat">
-                <span className="about__stat-value accent">{stat.value}</span>
+                <span className="about__stat-value accent">
+                  <AnimatedCounter value={stat.value} />
+                </span>
                 <span className="about__stat-label">{stat.label}</span>
               </div>
             ))}
