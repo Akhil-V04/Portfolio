@@ -166,7 +166,7 @@ export const CERTIFICATIONS = [
 
 export const CONTACT = {
   email: "akhilvaddeboina25@gmail.com",
-  linkedin: "https://linkedin.com/in/vaddeboina-akhil",
+  linkedin: "https://www.linkedin.com/in/vaddeboina-akhil-9982b43a4?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   github: "https://github.com/Akhil-V04",
   location: "Hyderabad, Telangana",
 };
