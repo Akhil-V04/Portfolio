@@ -26,11 +26,9 @@ export default function Navbar({ onHireClick }) {
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""} ${menuOpen ? "navbar--open" : ""}`}>
       <div className="container navbar__inner">
-        <a href="#hero" className="navbar__logo mono" style={{ fontSize: "1.2rem", fontWeight: "700", color: "#f1f1f1", textDecoration: "none" }}>Akhil's Portfolio</a>
-
-        <div style={{ flex: 1 }} />
+        <a href="#hero" className="navbar__logo mono" style={{ fontSize: "clamp(1rem, 4vw, 1.2rem)", fontWeight: "700", color: "#f1f1f1", textDecoration: "none" }}>Akhil's Portfolio</a>
         <button
           className="navbar__toggle"
           onClick={() => setMenuOpen(!menuOpen)}

@@ -56,10 +56,19 @@ export default function Leadership({ onPreview }) {
               whileHover="hover"
               animate="rest"
             >
-              <motion.div variants={cardHover} style={{ height: "100%" }}>
-                <p className="btc__role-title">{item.role}</p>
-                <p className="btc__role-org mono">{item.org}</p>
-                <p className="btc__role-period mono">{item.period}</p>
+              <motion.div variants={cardHover} className="btc__role-card-inner">
+                <div className="btc__role-text">
+                  <p className="btc__role-title">{item.role}</p>
+                  <p className="btc__role-org mono">{item.org}</p>
+                  <p className="btc__role-period mono">{item.period}</p>
+                </div>
+                {item.logo && (
+                  <img
+                    src={item.logo}
+                    alt={`${item.org} logo`}
+                    className="btc__role-logo"
+                  />
+                )}
               </motion.div>
             </motion.div>
           ))}
@@ -86,15 +95,24 @@ export default function Leadership({ onPreview }) {
               whileHover="hover"
               animate="rest"
             >
-              <motion.div variants={cardHover} style={{ height: "100%" }}>
-                <p className="btc__cert-title">{cert.title}</p>
-                <p className="btc__cert-issuer mono">{cert.issuer}</p>
-                <button
-                  className="btc__cert-btn"
-                  onClick={() => onPreview?.(cert.file)}
-                >
-                  View Certificate →
-                </button>
+              <motion.div variants={cardHover} className="btc__cert-card-inner">
+                <div className="btc__cert-text">
+                  <p className="btc__cert-title">{cert.title}</p>
+                  <p className="btc__cert-issuer mono">{cert.issuer}</p>
+                  <button
+                    className="btc__cert-btn"
+                    onClick={() => onPreview?.(cert.file)}
+                  >
+                    View Certificate →
+                  </button>
+                </div>
+                {cert.logo && (
+                  <img
+                    src={cert.logo}
+                    alt={`${cert.issuer} logo`}
+                    className="btc__cert-logo"
+                  />
+                )}
               </motion.div>
             </motion.div>
           ))}

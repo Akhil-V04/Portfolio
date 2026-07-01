@@ -30,7 +30,7 @@ export const ABOUT = {
   stats: [
     { value: "3", label: "Production-deployed projects" },
     { value: "3", label: "Internships completed" },
-    { value: "2027", label: "Expected graduation" },
+    { value: "2027", label: "Graduating in" },
   ],
 };
 
@@ -128,39 +128,45 @@ export const EXPERIENCE = [
 ];
 
 export const LEADERSHIP = [
-  { role: "Coordinator", org: "IEEE VBITSB", period: "2025–2026" },
+  { role: "Coordinator", org: "IEEE VBITSB", period: "2025–2026", logo: "/assets/logos/ieee.png" },
   {
     role: "Campus Coordinator",
     org: "Google Crowdsource VBIT",
     period: "2025–2026",
+    logo: "/assets/logos/google-crowdsource.png",
   },
   {
     role: "Student Coordinator",
     org: "StreetCause VBIT (NGO)",
     period: "2024–2026",
+    logo: "/assets/logos/streetcause.png",
   },
 ];
 
 export const CERTIFICATIONS = [
   {
     title: "Python Full Stack",
-    issuer: "ISO",
+    issuer: "EduSkills",
     file: "/assets/certifications/Python Full Stack_ISO.pdf",
+    logo: "/assets/logos/eduskills.png",
   },
   {
     title: "Technology Job Simulation",
     issuer: "Deloitte",
     file: "/assets/certifications/Deloitte Technology Job Simulation.pdf",
+    logo: "/assets/logos/deloitte.png",
   },
   {
     title: "Advance Software Job Simulation",
-    issuer: "Walmart",
+    issuer: "Walmart Global Tech",
     file: "/assets/certifications/walmart_advance software job simulation certificate.pdf",
+    logo: "/assets/logos/walmart_global_tech.jpg",
   },
   {
     title: "Android Developer Virtual Internship",
     issuer: "AICTE",
     file: "/assets/certifications/Android Developer Virtual Internship_AICTE.pdf",
+    logo: "/assets/logos/aicte.png",
   },
 ];
 

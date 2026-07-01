@@ -175,7 +175,13 @@ export default function HireMePage({ onClose }) {
                   Your email client should have opened. If not, reach me at{" "}
                   <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                 </p>
-                <button className="btn-outline" onClick={() => setSubmitted(false)}>
+                <button
+                  className="btn-outline"
+                  onClick={() => {
+                    setFormData({ ...formData, service: "", message: "" });
+                    setSubmitted(false);
+                  }}
+                >
                   Send Another
                 </button>
               </motion.div>

@@ -20,7 +20,7 @@ function AnimatedCounter({ value }) {
   useEffect(() => {
     if (isInView && !isNaN(numValue)) {
       const controls = animate(0, numValue, {
-        duration: 2.5,
+        duration: 1.2,
         ease: "easeOut",
         onUpdate(v) {
           setDisplayValue(Math.floor(v));

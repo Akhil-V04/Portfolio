@@ -61,6 +61,11 @@ img {
 .section {
   padding: 6rem 0;
 }
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+}
 
 .section-label {
   font-size: 0.85rem;
@@ -232,10 +237,16 @@ img {
   backdrop-filter: blur(8px);
   border-bottom-color: #162033;
 }
+.navbar--open {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: transparent !important;
+  border-bottom-color: transparent !important;
+}
 .navbar__inner {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 .navbar__links {
   display: flex;
@@ -307,24 +318,36 @@ img {
   }
   .navbar__links {
     position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 260px;
-    background: #0a1120;
-    border-left: 1px solid #162033;
+    inset: 0;
+    width: 100vw;
+    background: rgba(10, 17, 32, 0.5);
+    backdrop-filter: blur(15px);
+    border-left: none;
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
-    gap: 0.5rem;
-    transform: translateX(100%);
-    transition: transform 0.3s;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 2.5rem;
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s;
   }
   .navbar__links--open {
-    transform: translateX(0);
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navbar__link {
+    font-size: 1.15rem;
+    font-weight: 600;
   }
   .navbar__link--active {
-    width: 100%;
-    text-align: center;
+    background: transparent;
+    color: #4361ee;
+  }
+  .navbar__hire {
+    margin-right: 3rem;
   }
 }
 
@@ -483,7 +506,7 @@ img {
 }
 
 .hero__role-big {
-  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-size: clamp(2rem, 10vw, 5rem);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.02em;
@@ -528,8 +551,7 @@ img {
     justify-content: center;
   }
   .hero__photo-wrap {
-    height: 88%;
-    opacity: 0.35;
+    display: none;
   }
   .hero__photo {
     max-width: 102vw;
@@ -851,10 +873,30 @@ img {
 }
 .btc__role-card {
   padding: 1.4rem 1.5rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.btc__role-card-inner {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.btc__role-text {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  transition: border-color 0.3s, transform 0.3s;
+}
+.btc__role-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid #162033;
+  background: #0f1826;
+  flex-shrink: 0;
 }
 .btc__role-title {
   font-size: 1.05rem;
@@ -883,9 +925,30 @@ img {
 }
 .btc__cert-card {
   padding: 1.4rem 1.5rem;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.btc__cert-card-inner {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.btc__cert-text {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  transition: border-color 0.3s, transform 0.3s;
+  height: 100%;
+}
+.btc__cert-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid #162033;
+  background: #0f1826;
+  flex-shrink: 0;
 }
 .btc__cert-title {
   font-size: 1rem;
@@ -1445,6 +1508,10 @@ img {
   .hire-page__back {
     left: 1rem;
     top: 1rem;
+  }
+
+  .hire-page__photo-wrapper {
+    max-width: 160px;
   }
 }
 
