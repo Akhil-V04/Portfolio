@@ -90,7 +90,7 @@ export const PROJECTS = [
     description:
       "Fully offline, local-first AI assistant with voice input/output, running on consumer GPU hardware — no cloud API dependency, built for privacy and low-latency interaction.",
     live: null,
-    source: "#",
+    source: "https://github.com/Akhil-V04/F.R.I.D.A.Y.git",
   },
 ];
 
@@ -113,7 +113,7 @@ export const EXPERIENCE = [
       "Audited the organization's website end-to-end, surfacing security and UX gaps, then built and shipped an HTML/CSS awareness webpage from Figma designs.",
     logo: "/assets/logos/inamigos.png",
     offerLetter: "/assets/offer-letters/inamigos-offer.pdf",
-    completionCert: "/assets/certifications/inamigos-completion.pdf",
+    completionCert: "/assets/offer-letters/inamigos-completion.pdf",
   },
   {
     role: "Frontend & Design Intern",
