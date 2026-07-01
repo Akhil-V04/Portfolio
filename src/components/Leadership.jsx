@@ -7,10 +7,19 @@ const fadeUp = {
 };
 
 const stagger = {
-  visible: { transition: { staggerChildren: 0.1 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
-export default function Leadership() {
+const cardHover = {
+  rest: { scale: 1, borderColor: "rgba(22,32,51,1)" },
+  hover: {
+    scale: 1.03,
+    borderColor: "rgba(67,97,238,0.35)",
+    transition: { duration: 0.25 },
+  },
+};
+
+export default function Leadership({ onPreview }) {
   return (
     <section id="leadership" className="section">
       <motion.div
@@ -18,51 +27,78 @@ export default function Leadership() {
         variants={stagger}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.15 }}
       >
-        <motion.p variants={fadeUp} className="section-label mono">
-          // leadership & certs
-        </motion.p>
-
-        <motion.h2 variants={fadeUp} className="leadership__heading">
-          Beyond the code
+        {/* ── Giant heading ── */}
+        <motion.h2 variants={fadeUp} className="btc__heading">
+          Beyond the{" "}
+          <span className="btc__heading-accent">Code</span>
         </motion.h2>
 
-        <div className="leadership__grid">
-          <motion.div variants={fadeUp} className="leadership__col">
-            <h3 className="leadership__sub mono accent">Roles</h3>
-            {LEADERSHIP.map((item) => (
-              <div key={item.org} className="card leadership__item">
-                <p className="leadership__role">{item.role}</p>
-                <p className="leadership__org mono">{item.org}</p>
-                <p className="leadership__period mono accent">{item.period}</p>
-              </div>
-            ))}
-          </motion.div>
+        {/* ── Roles ── */}
+        <motion.h3 variants={fadeUp} className="btc__sub-heading mono">
+          Roles
+        </motion.h3>
 
-          <motion.div variants={fadeUp} className="leadership__col">
-            <h3 className="leadership__sub mono accent">Certifications</h3>
-            {CERTIFICATIONS.length > 0 ? (
-              CERTIFICATIONS.map((cert) => (
-                <a 
-                  key={cert.title} 
-                  href={cert.file} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="card leadership__item"
-                  style={{ display: "block", textDecoration: "none" }}
+        <motion.div
+          className="btc__roles-grid"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {LEADERSHIP.map((item) => (
+            <motion.div
+              key={item.org}
+              className="btc__role-card card"
+              variants={fadeUp}
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <motion.div variants={cardHover} style={{ height: "100%" }}>
+                <p className="btc__role-title">{item.role}</p>
+                <p className="btc__role-org mono">{item.org}</p>
+                <p className="btc__role-period mono">{item.period}</p>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* ── Certifications ── */}
+        <motion.h3 variants={fadeUp} className="btc__sub-heading mono">
+          Certifications
+        </motion.h3>
+
+        <motion.div
+          className="btc__certs-grid"
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          {CERTIFICATIONS.map((cert) => (
+            <motion.div
+              key={cert.title}
+              className="btc__cert-card card"
+              variants={fadeUp}
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
+            >
+              <motion.div variants={cardHover} style={{ height: "100%" }}>
+                <p className="btc__cert-title">{cert.title}</p>
+                <p className="btc__cert-issuer mono">{cert.issuer}</p>
+                <button
+                  className="btc__cert-btn"
+                  onClick={() => onPreview?.(cert.file)}
                 >
-                  <p className="leadership__role">{cert.title}</p>
-                  <p className="leadership__org mono">{cert.issuer}</p>
-                </a>
-              ))
-            ) : (
-              <p className="muted mono" style={{ fontSize: "0.85rem" }}>
-                // coming soon...
-              </p>
-            )}
-          </motion.div>
-        </div>
+                  View Certificate →
+                </button>
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
       </motion.div>
     </section>
   );

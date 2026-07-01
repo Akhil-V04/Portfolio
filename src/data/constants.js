@@ -101,6 +101,9 @@ export const EXPERIENCE = [
     date: "Jun – Jul 2026",
     description:
       "Annotated face, head, and torso keypoints across a high-volume video dataset for Apple's computer vision training pipeline, maintaining quality through strict multi-stage review.",
+    logo: "/assets/logos/student-tribe.png",
+    offerLetter: "/assets/offer-letters/student-tribe-offer.pdf",
+    completionCert: null,
   },
   {
     role: "Web Development Intern",
@@ -108,6 +111,9 @@ export const EXPERIENCE = [
     date: "May 2026",
     description:
       "Audited the organization's website end-to-end, surfacing security and UX gaps, then built and shipped an HTML/CSS awareness webpage from Figma designs.",
+    logo: "/assets/logos/inamigos.png",
+    offerLetter: "/assets/offer-letters/inamigos-offer.pdf",
+    completionCert: "/assets/certifications/inamigos-completion.pdf",
   },
   {
     role: "Frontend & Design Intern",
@@ -115,6 +121,9 @@ export const EXPERIENCE = [
     date: "Jul – Sep 2025",
     description:
       "Designed Figma UI assets for digital communication campaigns and translated mockups into responsive HTML/CSS components.",
+    logo: "/assets/logos/coding-jr.png",
+    offerLetter: "/assets/offer-letters/coding-jr-offer.pdf",
+    completionCert: null,
   },
 ];
 

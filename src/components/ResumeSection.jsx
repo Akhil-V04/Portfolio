@@ -5,7 +5,7 @@ const fadeUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-export default function ResumeSection() {
+export default function ResumeSection({ onPreview }) {
   return (
     <section id="resume" className="section">
       <motion.div
@@ -20,21 +20,32 @@ export default function ResumeSection() {
         <h2 className="resume__heading">My resume</h2>
 
         <div className="card resume__card">
-          <div className="resume__preview">
+          <div
+            className="resume__preview"
+            onClick={() => onPreview && onPreview("/assets/resume/resume.pdf")}
+            style={{ cursor: "pointer" }}
+          >
             <img
               src="/assets/resume/akhil-resume-preview.png"
               alt="Akhil's resume preview"
               className="resume__img"
             />
           </div>
-          <a
-            href="/assets/resume/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary resume__btn"
-          >
-            Download resume
-          </a>
+          <div className="resume__buttons">
+            <a
+              href="/assets/resume/resume.pdf"
+              download
+              className="btn-primary resume__btn"
+            >
+              Download resume
+            </a>
+            <button
+              className="btn-outline resume__btn"
+              onClick={() => onPreview && onPreview("/assets/resume/resume.pdf")}
+            >
+              Preview resume
+            </button>
+          </div>
         </div>
       </motion.div>
     </section>

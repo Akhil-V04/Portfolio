@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NAV_LINKS } from "../data/constants";
 
-export default function Navbar() {
+export default function Navbar({ onHireClick }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeLink, setActiveLink] = useState("#hero");
@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="container navbar__inner">
-        <a href="#hero" className="navbar__logo mono" style={{ fontSize: "1.2rem", fontWeight: "700", color: "#f1f1f1", textDecoration: "none" }}>AK.</a>
+        <a href="#hero" className="navbar__logo mono" style={{ fontSize: "1.2rem", fontWeight: "700", color: "#f1f1f1", textDecoration: "none" }}>Akhil's Portfolio</a>
 
         <div style={{ flex: 1 }} />
         <button
@@ -54,9 +54,15 @@ export default function Navbar() {
           ))}
         </div>
 
-        <a href="#contact" className="navbar__hire" onClick={() => setMenuOpen(false)}>
+        <button
+          className="navbar__hire"
+          onClick={() => {
+            setMenuOpen(false);
+            onHireClick?.();
+          }}
+        >
           Hire Me
-        </a>
+        </button>
       </div>
     </nav>
   );
