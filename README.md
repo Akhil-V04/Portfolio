@@ -1,6 +1,7 @@
 # Akhil Vaddeboina - Personal Portfolio
-
+Live Website: https://portfolio-bice-ten-97.vercel.app/#experience
 A sleek, modern, and highly interactive personal portfolio website built with **React**, **Vite**, and **Framer Motion**. Designed with a premium dark aesthetic featuring glassmorphism elements, fluid animations, and a fully responsive layout.
+<img width="1917" height="866" alt="image" src="https://github.com/user-attachments/assets/e835f3c3-a724-4b42-889b-74a949a62b1d" />
 
 ## 🌟 Features
 
