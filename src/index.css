@@ -301,7 +301,7 @@ img {
   position: fixed;
   top: 1.2rem;
   right: 1.5rem;
-  z-index: 101;
+  z-index: 10000;
 }
 .navbar__toggle span {
   display: block;
@@ -320,22 +320,25 @@ img {
     position: fixed;
     inset: 0;
     width: 100vw;
+    height: 100vh;
     background: rgba(10, 17, 32, 0.5);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-left: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0;
     gap: 2.5rem;
-    transform: translateY(-10px);
+    z-index: 9999;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s;
+    transition: opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.4s;
   }
   .navbar__links--open {
-    transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
   .navbar__link {
